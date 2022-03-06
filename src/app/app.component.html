@@ -1,20 +1,24 @@
-<h1>Moja strona</h1>
-<p>Autor: Michał Banaś</p>
 
 
 
-<div class="container">
+
+
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+    <div class="menu">
+    <div class="p-1 mb-4 bg-info text-dark">
     <div class="row align-items-start">
       <div class="col">
-        <a href="/">Home</a>
+        <a href="/"><p class="text-dark"><b>HOME</b></p></a>
       </div>
       <div class="col">
-        <a href="o-nas">O nas</a>
+        <a href="o-nas"><p class="text-dark"><b>O NAS</b></p></a>
+        </div>
+        </div>
       </div>
+    
     </div>
 
-    <div class="container">
-        <router-outlet></router-outlet>
-      </div>
+   
 
     <router-outlet></router-outlet>
