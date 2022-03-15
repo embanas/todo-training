@@ -1,23 +1,17 @@
-<div class="card-group">
-    <div class="card">
-      <img routerLink="/pracownik/Jan" [src] = "employee.image" height="400" style="margin: 5px; padding: 5px" class="rounded-circle" alt="fotka Janka">
-      <div class="card-body">
-        <h4 class="card-title"><p class="fst-italic">{{employee.title}}</p></h4>
-        <p class="card-text">Lider naszego teamu. Absolwent Wyższej Szkoły Ekspresowej Rozbiórki, jedyny w swoim rodzaju, bardzo doświadczony, niewiele pijący w trakcie pracy Janek.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img routerLink="/pracownik/Jasiek" [src] = "employee2.image" class="rounded-circle" height="400" style="margin: 5px; padding: 5px" alt="fotka Jaśka">
-      <div class="card-body">
-        <h4 class="card-title"><p class="fst-italic">{{employee2.title}}</p></h4>
-        <p class="card-text">Duch naszego teamu. Twórca fantastycznej atmosfery, zawsze wesoły, radosny i uśmiechnięty Jasiek.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img routerLink="/pracownik/Fasol" [src] = "employee3.image" height="400" style="margin: 5px; padding: 5px" class="rounded-circle" alt="fotka Fasola">
-      <div class="card-body">
-        <h4 class="card-title"><p class="fst-italic">{{employee3.title}}</p></h4>
-        <p class="card-text">Mózg naszego teamu. Uczestnik wielu kursów budowania online, mól książkowy, wszystkie zagadnienia architekury ma w małym palcu, a rysunki techniczne robi z zamkniętymi oczami - Fasol.</p>
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col" *ngFor="let employee of employees | async">
+      <div class="card-group">
+        <div class="card" style="width: 14rem; height: 35rem;">
+          <img routerLink="/pracownik/Jan" [src]="employee.src" class="rounded-circle" [alt]="employee.alt" style="height: 24rem">
+          <div class="card-body">
+            <h4 class="card-title">
+              <p class="fst-italic">{{employee.name}}</p>
+            </h4>
+            <p class="card-text">{{employee.description}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
