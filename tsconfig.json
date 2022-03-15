@@ -9,6 +9,10 @@
       "employees": [
         "dist/employees/employees",
         "dist/employees"
+      ],
+      "messages": [
+        "dist/messages/messages",
+        "dist/messages"
       ]
     },
     "declaration": false,
