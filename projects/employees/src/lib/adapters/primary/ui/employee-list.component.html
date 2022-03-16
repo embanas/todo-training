@@ -9,6 +9,7 @@
               <p class="fst-italic">{{ employee.name }}</p>
             </h4>
             <p class="card-text">{{ employee.bio }}</p>
+            <p class="fw-light" *ngFor="let department of employee.department"> Drużyna: {{ department.name }}, liczba specjalistów: {{ department.employeeCount }}</p>
           </div>
         </div>
       </div>
