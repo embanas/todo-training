@@ -1,14 +1,14 @@
 <div class="container">
-  <div class="row align-items-start">
-    <div class="col" *ngFor="let employee of employees | async">
+  <div class="row">
+    <div class="col" *ngFor="let employee of employees$ | async">
       <div class="card-group">
-        <div class="card" style="width: 14rem; height: 35rem;">
-          <img routerLink="/pracownik/Jan" [src]="employee.src" class="rounded-circle" [alt]="employee.alt" style="height: 24rem">
+        <div class="card" style="width: 14rem; height: 37rem;">
+          <img routerLink="/pracownik/Jan" [src]="employee.imageUrl" [alt]="employee.name" style="height: 24rem">
           <div class="card-body">
             <h4 class="card-title">
-              <p class="fst-italic">{{employee.name}}</p>
+              <p class="fst-italic">{{ employee.name }}</p>
             </h4>
-            <p class="card-text">{{employee.description}}</p>
+            <p class="card-text">{{ employee.bio }}</p>
           </div>
         </div>
       </div>

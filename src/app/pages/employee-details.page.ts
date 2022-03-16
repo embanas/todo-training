@@ -12,6 +12,5 @@ import { ActivatedRoute } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeDetailsPage {
-    params$ = this._activatedRoute.params;
-    constructor(private _activatedRoute: ActivatedRoute) {}
+
 }

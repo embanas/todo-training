@@ -3,7 +3,7 @@ import {
   ViewEncapsulation,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { EmployeeDTO } from '../../../application/ports/secondary/employee.dto';
 
 @Component({
@@ -13,24 +13,24 @@ import { EmployeeDTO } from '../../../application/ports/secondary/employee.dto';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeListComponent {
- employees = of([
-  {
-    src: 'https://topmejt.co.uk/wp-content/uploads/2016/11/ja-fasola-rowan-atkinson-mi-pluszak-niedwied-zabawka-mr-bean.jpg',
-    alt: 'fotka Janka',
-    name: 'Janek',
-    description: 'Lider naszego teamu. Absolwent Wyższej Szkoły Ekspresowej Rozbiórki, jedyny w swoim rodzaju, bardzo doświadczony, niewiele pijący w trakcie pracy Janek.'
-  },
-  {
-    src: 'https://s3.viva.pl/newsy/rowan-atkinson-2007-rok-kadry-z-filmu-mr-beans-holiday-575389-GALLERY_BIG.jpg',
-    alt: 'fotka Jaśka',
-    name: 'Jasiek',
-    description: 'Duch naszego teamu. Twórca fantastycznej atmosfery, zawsze wesoły, radosny i uśmiechnięty Jasiek.'
-  },
-   {
-     src: 'https://ocdn.eu/pulscms-transforms/1/84Hk9kpTURBXy81Njc5YjI4YWIzNTQ4MzVkOTZkYjE0NzdiNTEyNmIxOC5qcGeRkwLNA0jNAjCCoTABoTEB',
-    alt: 'fotka Fasola',
-    name: 'Fasol',
-    description: 'Mózg naszego teamu. Uczestnik wielu kursów budowania online, mól książkowy, wszystkie zagadnienia architekury ma w małym palcu, a rysunki techniczne robi z zamkniętymi oczami - Fasol.'
-  }
- ]);
+employees$: Observable<EmployeeDTO[]> = of([
+{
+  id: '1',
+  name: 'Janek',
+  imageUrl: 'https://topmejt.co.uk/wp-content/uploads/2016/11/ja-fasola-rowan-atkinson-mi-pluszak-niedwied-zabawka-mr-bean.jpg',
+  bio: 'Lider naszego teamu. Absolwent Wyższej Szkoły Ekspresowej Rozbiórki, jedyny w swoim rodzaju, bardzo doświadczony, niewiele pijący w trakcie pracy Janek.'
+},
+{
+  id: '2',
+  name: 'Jasiek',
+  imageUrl: 'https://s3.viva.pl/newsy/rowan-atkinson-2007-rok-kadry-z-filmu-mr-beans-holiday-575389-GALLERY_BIG.jpg',
+  bio: 'Duch naszego teamu. Twórca fantastycznej atmosfery, zawsze wesoły, radosny i uśmiechnięty Jasiek.'
+},
+{
+  id: '3',
+  name: 'Fasol',
+  imageUrl: 'https://ocdn.eu/pulscms-transforms/1/84Hk9kpTURBXy81Njc5YjI4YWIzNTQ4MzVkOTZkYjE0NzdiNTEyNmIxOC5qcGeRkwLNA0jNAjCCoTABoTEB',
+  bio: 'Mózg naszego teamu. Uczestnik wielu kursów budowania online, mól książkowy, wszystkie zagadnienia architekury ma w małym palcu, a rysunki techniczne robi z zamkniętymi oczami - Fasol.'
+},
+ ])
 }

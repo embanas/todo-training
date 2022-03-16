@@ -13,7 +13,11 @@
       "messages": [
         "dist/messages/messages",
         "dist/messages"
-      ]
+      ],
+      "@employees": ["projects/employees/src/index.ts"],
+      "@employeeDetail": ["projects/employees/src/index.ts"],
+      "@contactForm": ["projects/messages/src/index.ts"]
+
     },
     "declaration": false,
     "downlevelIteration": true,

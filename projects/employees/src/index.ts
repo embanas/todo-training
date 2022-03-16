@@ -3,3 +3,4 @@
  */
 
 export * from './lib/adapters/primary/ui/employee-list.component-module';
+export * from './lib/adapters/primary/ui/employee-detail.component-module';
