@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AboutUsPage } from './about-us.page';
-import { EmployeeListComponentModule } from '@employees';
+import { EmployeeListComponentModule, FirebaseEmployeesServiceModule } from '@employees';
 
 @NgModule({
   imports: [
@@ -14,6 +14,7 @@ import { EmployeeListComponentModule } from '@employees';
       },
     ]),
     EmployeeListComponentModule,
+    FirebaseEmployeesServiceModule
   ],
   declarations: [AboutUsPage],
   providers: [],
