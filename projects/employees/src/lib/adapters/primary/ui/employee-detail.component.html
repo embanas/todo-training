@@ -1,3 +1,17 @@
-<h1>{{(params$ | async)?.name}}</h1>
+<div class="container" *ngIf="employee$ | async as employee">
+    <div class="row">
+        <div class="text-center">
+            <h1> {{ employee.name }}</h1>
+        </div>
+    </div>
+<br>
+<div class="text-center">
+    <img [src]="employee.imageUrl" width="40%" height="40%">
 
-{{ employee$ | async | json }}
+    <br><br>
+
+    <p class="fst-italic">{{ employee.bio}}</p>
+    <p class="fw-light"> Drużyna: {{ employee.department.name }}
+
+</div>
+</div>

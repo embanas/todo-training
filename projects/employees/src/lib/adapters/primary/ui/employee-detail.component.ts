@@ -11,6 +11,7 @@ import {
   GETS_ONE_EMPLOYEE_DTO,
   GetsOneEmployeeDtoPort,
 } from '../../../application/ports/secondary/gets-one-employee.dto-port';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'lib-employee-detail',
@@ -22,7 +23,8 @@ export class EmployeeDetailComponent {
   params$ = this._activatedRoute.params;
   employee$: Observable<EmployeeDTO> = this._getsOneEmployeeDto.getOne(
       this._activatedRoute.snapshot.params.employeeId
-  );
+  ).pipe(tap(x => console.log(x)))
+  ;
 
   constructor(
     private _activatedRoute: ActivatedRoute,

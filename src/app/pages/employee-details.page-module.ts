@@ -13,7 +13,7 @@ import { FirebaseEmployeesServiceModule } from '../../../projects/employees/src/
         }
       ]),
   EmployeeDetailComponentModule,
-  FirebaseEmployeesServiceModule
+  FirebaseEmployeesServiceModule,
 ],
   	declarations: [EmployeeDetailsPage],
   	providers: [],
