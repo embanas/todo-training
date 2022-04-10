@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
+import { InMemoryContextStorageModule } from '@employees';
 import { NavbarComponentModule } from 'projects/navigation/src/lib/adapters/primary/ui/navbar.component-module';
 import { environment } from 'src/environments/environment';
 
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
     NavbarComponentModule,
     AppRoutingModule, 
     AngularFireModule.initializeApp(environment.firestoreConfig),
+    InMemoryContextStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,8 @@
     <div class="col" *ngFor="let employee of employees$ | async">
       <div class="card-group">
         <div class="card" style="width: 14rem; height: 37rem;">
-          <img [routerLink]="'/pracownik/'+employee.id" [src]="employee.imageUrl" [alt]="employee.name" style="height: 24rem">
+          <img [routerLink]="'/pracownik/'+employee.id" (click)="onEmployeeClicked(employee)" [src]="employee.imageUrl"
+            [alt]="employee.name" style="height: 24rem">
           <div class="card-body">
             <h4 class="card-title">
               <p class="fst-italic">{{ employee.name }}</p>
