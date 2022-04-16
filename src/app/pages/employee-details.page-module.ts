@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { EmployeeDetailsPage } from './employee-details.page';
 import {
-  EmployeeDetailComponentModule,
+  EmployeeDetailComponentModule, EmployeeIdResolverModule,
 } from '@employeeDetail';
 import { FirebaseEmployeesServiceModule } from '../../../projects/employees/src/lib/adapters/secondary/infrastructure/firebase-employees.service-module';
+import { EmployeeIdResolver } from 'projects/employees/src/lib/adapters/primary/ui/employee-id.resolver';
 
 @NgModule({
   imports: [
@@ -14,10 +15,12 @@ import { FirebaseEmployeesServiceModule } from '../../../projects/employees/src/
       {
         path: '',
         component: EmployeeDetailsPage,
+        resolve: {employeeId: EmployeeIdResolver}
       },
     ]),
     EmployeeDetailComponentModule,
     FirebaseEmployeesServiceModule,
+    EmployeeIdResolverModule
   ],
   declarations: [EmployeeDetailsPage],
   providers: [],
